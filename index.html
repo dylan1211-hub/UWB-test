@@ -11,6 +11,7 @@
 </head>
 
 <body style="margin: 0px; overflow: hidden;">
+    
 	<a-scene
 	vr-mode-ui="enabled: false"
 	embedded
@@ -148,6 +149,10 @@
 				//let x = Math.cos(degree)*N - Math.sin(degree)*E; //換算至手機相機局部坐標系中(公尺)
 
 				if (type=="text"){
+					target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
+					H = data_h[j] + 1 - position.coords.altitude;
+				}
+                else if (type=="entity"){
 					target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
 					H = data_h[j] + 1 - position.coords.altitude;
 				}
