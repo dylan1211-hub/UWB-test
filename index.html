@@ -10,6 +10,9 @@
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 
+<link rel="stylesheet" href="./index.css">
+
+
 <body style="margin: 0px; overflow: hidden;">
 
 	<a-scene
@@ -24,7 +27,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--2.經緯廳: gps-entity-place="latitude: 22.9987154; longitude: 120.2200520;" position="0 27.033 0"-->
@@ -34,7 +37,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--3.大一教室: gps-entity-place="latitude: 22.9987299; longitude: 120.2200649;" position="0 31.634 0"-->
@@ -45,7 +48,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--4.電腦教室: gps-entity-place="latitude: 22.9987492; longitude: 120.2200666;" position="0 31.634 0"-->
@@ -56,7 +59,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--5.圖書室: gps-entity-place="latitude: 22.9987189; longitude: 120.2202121;" position="0 31.634 0"-->
@@ -67,7 +70,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--6.55210實驗室: gps-entity-place="latitude: 22.9987382; longitude: 120.2202138;" position="0 31.634 0"-->
@@ -78,7 +81,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
         <!--7.55316實驗室: gps-entity-place="latitude: 22.9987492; longitude: 120.2200666;" position="0 36.148 0"-->
@@ -89,7 +92,7 @@
         ></a-text>
         <a-entity
             rotation="0 0 0"
-            scale="2 2 2"
+            scale="1 1 1"
             gltf-model="https://dylan1211-hub.github.io/AR-Occlusion-Test/3D_model/Kirby.gltf"
         ></a-entity>
             
@@ -154,10 +157,9 @@
 				}
                 else if (type=="entity"){
 					target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
-					H = data_h[j] + 1 - position.coords.altitude;
-
 
                     target[j].addEventListener('click', function () {
+
                         ev.stopPropagation();
                         ev.preventDefault();
             
@@ -170,6 +172,7 @@
                             label.innerHTML = "測試!!";
                             container.appendChild(label);
                             document.body.appendChild(container);
+                            console.log("Click!");
             
                             setTimeout(() => {
                                 container.parentElement.removeChild(container);
