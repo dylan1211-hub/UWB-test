@@ -11,7 +11,7 @@
 </head>
 
 <body style="margin: 0px; overflow: hidden;">
-    
+
 	<a-scene
 	vr-mode-ui="enabled: false"
 	embedded
@@ -155,11 +155,34 @@
                 else if (type=="entity"){
 					target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
 					H = data_h[j] + 1 - position.coords.altitude;
+
+
+                    target[j].addEventListener('click', function () {
+                        ev.stopPropagation();
+                        ev.preventDefault();
+            
+                        const el = ev.detail.intersection && ev.detail.intersection.object.el;
+            
+                        if (el && el === ev.target) {
+                            const label = document.createElement('span');
+                            const container = document.createElement('div');
+                            container.setAttribute('id', 'place-label');
+                            label.innerHTML = "測試!!";
+                            container.appendChild(label);
+                            document.body.appendChild(container);
+            
+                            setTimeout(() => {
+                                container.parentElement.removeChild(container);
+                            }, 3000);
+                        }
+                    });
 				}
 
 				let target_att = document.createAttribute('position');
 				target_att.value = E+" "+H+" "+(-N);
 				target[j].setAttributeNode(target_att);
+
+
 			}
 		};
 		
