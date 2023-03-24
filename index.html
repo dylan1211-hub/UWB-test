@@ -117,6 +117,24 @@
 	</a-scene>
 	<!--<div id="info"></div>-->
 	<script>
+
+        AFRAME.registerComponent('rotation-reader', {
+        tick: function () {
+            // `this.el` is the element.
+            // `object3D` is the three.js object.
+
+            // `rotation` is a three.js Euler using radians. `quaternion` also available.
+            console.log(this.el.object3D.rotation);
+
+            // `position` is a three.js Vector3.
+            console.log(this.el.object3D.position);
+        }
+        });
+
+
+
+
+
 		//set a-entity data (e,n,h: a實體設定座標)
 		var data_e = [120.2199345, 120.2200520, 120.2200649, 120.2200666, 120.2202121, 120.2202138, 120.2200666];
 		var data_n = [22.9986416, 22.9987154, 22.9987299, 22.9987492, 22.9987189, 22.9987382, 22.9987492];
@@ -124,7 +142,7 @@
 		
 		
 
-          const MyApiURL = "https://17db-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
+          const MyApiURL = "https://ad53-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
             jQuery(document).ready(function(){
                     $.getJSON( MyApiURL, function( data ) {
                             let height = 26.728;
