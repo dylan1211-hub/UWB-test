@@ -10,9 +10,10 @@
 	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
 
-    var position;
+        var position;
         SetLocation("text");
         SetLocation("entity");
 
@@ -45,46 +46,57 @@
         };
 
 
-        const MyApiURL = "https://ad53-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
-        jQuery(document).ready(function(){
-                    
-            setInterval(function() {
-                    $.getJSON( MyApiURL, function( data ) {
-                        var height = 26.728;
-                        position = {coords:{latitude: data.y, longitude: data.x, altitude: height}}; //用戶即時位置座標
-                        console.log("x: "+ data.x +"y: "+ data.y +"z: "+ height);
-                        
-                    });
-
-                    
-                }, 2000);
-               
-                
-
-        });
+        
 
 
         AFRAME.registerComponent('uwb-tracking', {
-                    init: function(position) {
+                    init: function() {
                     
-                    // Initialize your UWB system
-                    //var uwbSystem = new UWBSystem();
-
-                    // Set up a loop to update the camera's position and orientation
-                    var self = this;
-                    this.el.sceneEl.addEventListener('renderstart', function() {
-                    self.updateCamera(position);
-                    });
+                        // Initialize your UWB system
+                        //var uwbSystem = new UWBSystem();
+                        
+                        // Set up a loop to update the camera's position and orientation
+                        var self = this;
+                        this.el.sceneEl.addEventListener('renderstart', function() {
+                        self.updateCamera();
+                        });
                     },
 
-                    updateCamera: function(position) {
+                    updateCamera: function() {
+                        
+                        const MyApiURL = "https://fa39-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
+                        jQuery(document).ready(function(){
+                                    
+                            setInterval(function() {
+                                    $.getJSON( MyApiURL, function( data ) {
+                                        var height = 26.728;
+                                        position = {coords:{latitude: data.y, longitude: data.x, altitude: height}}; //用戶即時位置座標
+                                        console.log("x: "+ data.x +"y: "+ data.y +"z: "+ height);
+                                        getposition(position);
+                                        // Set the camera's position and orientation based on the UWB data
+                                    });
+                                    
+                                }, 2000);  
+                                
 
-                    // Convert the position data into a Three.js Vector3 object
-                    var c_position = new THREE.Vector3(position.coords.longitude, position.coords.latitude, position.coords.altitude);
-                    console.log(c_position);
-                    // Set the camera's position and orientation based on the UWB data
-                    this.el.setAttribute('position', c_position);
-                    //this.el.setAttribute('rotation', '0 ' + positionData.heading + ' 0');
+                        });
+
+                        var position1;
+                        var c_position;
+                        
+                        function getposition(p){
+                            position1=position;
+                            console.log(position1);
+
+                            // Convert the position data into a Three.js Vector3 object
+                            c_position = new THREE.Vector3(position1.coords.longitude, position1.coords.latitude, position1.coords.altitude);
+                            console.log(c_position);
+                        }
+                        
+                        this.el.setAttribute('position', c_position);
+                        //this.el.setAttribute('rotation', '0 ' + positionData.heading + ' 0');
+
+                    
                     }
                 });
     </script>
@@ -197,10 +209,6 @@
 	<!--<div id="info"></div>-->
 
 	<script>
-        
-
-		
-		
         
 	</script>
 </body>
