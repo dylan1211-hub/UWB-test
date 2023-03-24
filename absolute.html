@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-	<title>real time indoor: 1F (26.728)(absolute)</title>
+	<title>(absolute)real time indoor: 1F (26.728)</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 	<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
@@ -119,9 +119,9 @@
 	<!--<div id="info"></div>-->
 
 	<script>
-    var position;
-     SetLocation("text");
-     SetLocation("entity");
+        var position;
+        SetLocation("text");
+        SetLocation("entity");
 
 		
 
@@ -162,32 +162,37 @@
                         console.log("x: "+ data.x +"y: "+ data.y +"z: "+ height);
                     });
                 }, 2000);
+
+                AFRAME.registerComponent('uwb-tracking', {
+                init: function(position) {
+                    // Initialize your UWB system
+                    //var uwbSystem = new UWBSystem();
+
+                    // Set up a loop to update the camera's position and orientation
+                    var self = this;
+                    this.el.sceneEl.addEventListener('renderstart', function() {
+                    self.updateCamera(position);
+                    });
+                },
+
+                updateCamera: function(position) {
+
+                    // Convert the position data into a Three.js Vector3 object
+                    var c_position = new THREE.Vector3(position.coords.longitude, position.coords.latitude, position.coords.altitude);
+                    console.log(c_position);
+                    // Set the camera's position and orientation based on the UWB data
+                    this.el.setAttribute('position', c_position);
+                    //this.el.setAttribute('rotation', '0 ' + positionData.heading + ' 0');
+                }
+                });
+
+
+
         });
 
-		AFRAME.registerComponent('uwb-tracking', {
-        init: function(position) {
-            // Initialize your UWB system
-            //var uwbSystem = new UWBSystem();
-
-            // Set up a loop to update the camera's position and orientation
-            var self = this;
-            this.el.sceneEl.addEventListener('renderstart', function() {
-            self.updateCamera(position);
-            });
-        },
-
-        updateCamera: function(position) {
-
-            // Convert the position data into a Three.js Vector3 object
-            var c_position = new THREE.Vector3(position.coords.longitude, position.coords.latitude, position.coords.altitude);
-            console.log(c_position);
-            // Set the camera's position and orientation based on the UWB data
-            this.el.setAttribute('position', c_position);
-            //this.el.setAttribute('rotation', '0 ' + positionData.heading + ' 0');
-        }
-        });
 		
-	
+		
+        
 	</script>
 </body>
 </html>
