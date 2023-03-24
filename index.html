@@ -194,6 +194,11 @@
 				target_att.value = E+" "+H+" "+(-N);
 				target[j].setAttributeNode(target_att);
 
+                let self = document.querySelector('a-camera');
+                let self_pos = document.createAttribute('position');
+                self_pos.value=position.coords.longitude+" "+position.coords.altitude+" "+position.coords.latitude;
+                self.setAttributeNode(self_pos);
+
 
 			}
 		};
