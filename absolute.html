@@ -160,11 +160,15 @@
                         var height = 26.728;
                         position = {coords:{latitude: data.y, longitude: data.x, altitude: height}}; //用戶即時位置座標
                         console.log("x: "+ data.x +"y: "+ data.y +"z: "+ height);
+                        
                     });
-                }, 2000);
 
+                    
+                }, 2000);
+               
                 AFRAME.registerComponent('uwb-tracking', {
-                init: function(position) {
+                    init: function(position) {
+                    
                     // Initialize your UWB system
                     //var uwbSystem = new UWBSystem();
 
@@ -173,9 +177,9 @@
                     this.el.sceneEl.addEventListener('renderstart', function() {
                     self.updateCamera(position);
                     });
-                },
+                    },
 
-                updateCamera: function(position) {
+                    updateCamera: function(position) {
 
                     // Convert the position data into a Three.js Vector3 object
                     var c_position = new THREE.Vector3(position.coords.longitude, position.coords.latitude, position.coords.altitude);
@@ -183,10 +187,8 @@
                     // Set the camera's position and orientation based on the UWB data
                     this.el.setAttribute('position', c_position);
                     //this.el.setAttribute('rotation', '0 ' + positionData.heading + ' 0');
-                }
+                    }
                 });
-
-
 
         });
 
