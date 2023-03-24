@@ -23,6 +23,8 @@
 	embedded
 	arjs="sourceType: webcam; debugUIEnabled: false;"
 	>
+
+        <a-camera gps-camera rotation-reader></a-camera>
         <!--1.一樓大門: gps-entity-place="latitude: 22.9986416; longitude: 120.2199345;" position="0 26.728 0"-->
         <a-text
             value="gate"
@@ -108,7 +110,7 @@
             material="color: red "
         ></a-entity>
             
-        <a-camera rotation-reader></a-camera>
+        
 	</a-scene>
 	<!--<div id="info"></div>-->
 	<script>
