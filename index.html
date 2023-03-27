@@ -114,7 +114,7 @@
         <a-camera  rotation-reader></a-camera>
         
 	</a-scene>
-	<!--<div id="info"></div>-->
+	<div id="info"></div>
 	<script>
 
 		//set a-entity data (e,n,h: a實體設定座標)
@@ -129,9 +129,9 @@
 			const DEG = theta_rad; //取得網頁就緒當下之方位角，不隨每一秒的位置更新重複執行
 			document.getElementById("info").innerHTML = "o: "+ DEG;
 		});
-		const orientation = theta_rad; 
-		const theta = -(0-180-90); //手機-z軸向(朝前)相對於N軸向之順時針角度，假設朝向正北開啟，即ZX對齊EN
-		const theta_rad = theta * Math.PI /180;
+		//const orientation = theta_rad; 
+		//const theta = -(0-180-90); //手機-z軸向(朝前)相對於N軸向之順時針角度，假設朝向正北開啟，即ZX對齊EN
+		//const theta_rad = theta * Math.PI /180;
 		
 		//watch position for outdoor
 		var watchID = navigator.geolocation.watchPosition(function( data ) {
