@@ -43,16 +43,14 @@
 		
 		//AR內容位置
 		let targetEntrance = ''; //記錄導引目標空間入口座標(導引箭號用)
-		let entrancePosition = [{"x":120.2199345,"y":22.9986416,"z":26.728},{"x":120.2200520,"y":22.9987154,"z":27.033},
-				       {"x":120.2200649,"y":22.9987299,"z":31.634},{"x":120.2200666,"y":22.9987492,"z":31.634},
-				       {"x":120.2202121,"y":22.9987189,"z":31.634},{"x":120.2202138,"y":22.9987382,"z":31.634},{"x":120.2200666,"y":22.9987492,"z":36.148}];
+		let entrancePosition = [{"x":120.220133302008,"y":22.9987890392738,"z":31.634}];
 		
 		
 	//---主要功能: 取得姿態、位置等參數控制AR內容渲染狀況---
 		//watch position for indoor (每一秒呼叫一次後端API，從GIPS server獲取最新一筆定位軌跡，存入物件position)
 		jQuery(document).ready(function(){
-			ResetColor('1', 'white'); ResetColor('2', 'yellow'); ResetColor('3', 'red');
-			SetColor(1);SetColor(2);
+			//ResetColor('1', 'white'); ResetColor('2', 'yellow'); ResetColor('3', 'red');
+			//SetColor(1);SetColor(2);
 			window.addEventListener('deviceorientation', function(event) { //get azimuth
 				//處理方位角
 				let head = event.webkitCompassHeading; //獲取羅盤資料(iOS限定) //手機-z軸向(朝前)相對於N軸向之順時針角度
@@ -79,18 +77,7 @@
 						SetLocation("entity", theta_rad, position, entrancePosition, "entrance");
 					});
 				}, 1500);
-				/*let i = 0; //(測試時才會用到)
-				let point = {x: track[i].x, y: track[i].y}; //用戶即時平面位置座標(判斷within使用)
-				let position = {coords:{longitude: track[i].x, latitude: track[i].y, altitude: track[i].z}}; //用戶即時位置座標
-				SetLocation("text", theta_rad, position, entrancePosition, "entrance");
-				SetLocation("entity", theta_rad, position, entrancePosition, "entrance");
-				setInterval(function() { //定時讀取軌跡中下一筆資料，並且重設模型位置
-					i++; console.log("i: "+i); if (i == track.length){ i = 0; };
-					point = {x: track[i].x, y: track[i].y}; //用戶即時平面位置座標(判斷within使用)
-					position = {coords:{longitude: track[i].x, latitude: track[i].y, altitude: track[i].z}}; //用戶即時位置座標
-					SetLocation("text", theta_rad, position, entrancePosition, "entrance");
-					SetLocation("entity", theta_rad, position, entrancePosition, "entrance");
-				}, 10000);*/
+
 			}, {once: true}); //取得網頁就緒當下之方位角，且不隨每次的位置更新重複執行
 		});
 				
@@ -121,7 +108,7 @@
 		
 	//---用戶互動UI功能---
 		//針對有活動之空間，提供對應的入口顏色	
-		function ResetColor(floor, color){
+		/*function ResetColor(floor, color){
 			let target_nF = document.querySelectorAll('a-entity.entrance.floor'+floor);
 			target_nF.forEach(function(x){
 				x.setAttribute('material', 'color: '+color); //先重置該樓entity顏色
@@ -131,8 +118,15 @@
 		function SetColor(index){
 			let target = document.querySelectorAll('a-entity.entrance');
 			target[index].setAttribute('material', 'color: blue; opacity: 1; transparent: true;');
-		};
+		};*/
 		
+
+
+	//測試位置紀錄
+	  //電腦教室正中間 170051.6439048175,2544361.6260521584 -> 120.220133302008,22.9987890392738
+
+	  
 	</script>
 </body>
 </html>
+
