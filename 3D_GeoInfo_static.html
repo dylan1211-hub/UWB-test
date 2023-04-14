@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-	<title>Show Event Space</title>
+	<title>Test static object</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
@@ -24,6 +24,9 @@
 		<!--3.電腦教室: gps-entity-place="latitude: 22.9987492; longitude: 120.2200666;" position="0 31.634 0"-->
 		<a-text class="entrance" value="55208" scale="1 1 1" align="center" color="yellow"></a-text>
 		<a-entity class="entrance floor2" geometry="primitive: sphere; radius: 0.25" material="color: yellow"></a-entity>
+		<!--3.電腦教室2: gps-entity-place="latitude: 22.9987492; longitude: 120.2200666;" position="0 31.634 0"-->
+		<a-text class="entrance" value="55208-1" scale="1 1 1" align="center" color="yellow"></a-text>
+		<a-entity class="entrance floor2" geometry="primitive: sphere; radius: 0.25" material="color: white"></a-entity>
         
 		<!--4.圖書室: gps-entity-place="latitude: 22.9987189; longitude: 120.2202121;" position="0 31.634 0">
 		<a-text class="entrance" value="55209" scale="1 1 1" align="center" color="yellow"></a-text>
@@ -39,11 +42,11 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-		const TrackAPI = "https://4fc7-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+		const TrackAPI = "https://01c4-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 		
 		//AR內容位置
 		let targetEntrance = ''; //記錄導引目標空間入口座標(導引箭號用)
-		let entrancePosition = [{"x":120.220133302008,"y":22.9987890392738,"z":31.634}];
+		let entrancePosition = [{"x":120.220133302008,"y":22.9987890392738,"z":31.434},{"x":120.220177060109,"y":22.9987995293029,"z":31.434}];
 		
 		
 	//---主要功能: 取得姿態、位置等參數控制AR內容渲染狀況---
@@ -124,8 +127,9 @@
 
 	//測試位置紀錄
 	  //電腦教室正中間 170051.6439048175,2544361.6260521584 -> 120.220133302008,22.9987890392738
+	  //電腦教室講桌附近 170056.13615617127,2544362.763860869 -> 120.220177060109,22.9987995293029
 
-	  
+
 	</script>
 </body>
 </html>
