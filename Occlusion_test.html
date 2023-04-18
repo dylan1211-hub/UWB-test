@@ -28,7 +28,7 @@
 	arjs="sourceType: webcam; debugUIEnabled: false;"
 	>
 		<!--1.圖書室方桌OID3: 120.2202250°E 22.9986611°N 31.634m-->
-		<a-entity class="table" geometry="primitive: sphere; radius: 0.25" material="color: yellow"></a-entity>
+		<a-entity class="table" geometry="primitive: sphere; radius: 0.8" material="color: yellow"></a-entity>
 		<a-camera rotation-reader></a-camera>
 	</a-scene>
 	
@@ -178,9 +178,9 @@
 		function CheckViewshed(p, poly){
 			let inorout = windingNumber(p, poly);
 			console.log('inorout: '+inorout);
-			if (inorout == 'on' || inorout == 'in'){ //位置在圖書室內部，遮蔽關閉
+			if (inorout == 'on' || inorout == 'in'){ //使用者位置在電腦教室內部，不會被遮蔽
 				viewshed_list = [];
-			}else if (inorout = 'out'){ //位置在圖書室外部，遮蔽開啟
+			}else if (inorout = 'out'){ //使用者位置在電腦教室外部，會被遮蔽
 				viewshed_list = [0];
 			}
 		};
@@ -263,7 +263,8 @@
 					if (type=="text"){
 						target[num[j]].setAttribute('opacity', 0.3);
 					} else if (type=="entity"){
-						target[num[j]].setAttribute('opacity', 0.3);
+						target[num[j]].setAttribute('opacity', 0.1);
+                        console.log(target[num[j]]);
 					}
 				}
 			}
