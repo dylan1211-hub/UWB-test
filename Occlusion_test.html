@@ -86,7 +86,7 @@
 		
 		
 		//watch position for indoor (每一秒呼叫一次後端API，從GIPS server獲取最新一筆定位軌跡，存入position物件)
-		const MyApiURL = "https://88a1-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
+		const MyApiURL = "https://383d-140-116-47-115.jp.ngrok.io/TrackAPI.php"; //80 port: ngrok http 80
 		jQuery(document).ready(function(){
 			window.addEventListener('deviceorientation', function(event) { //get azimuth
 				//處理方位角
@@ -265,6 +265,7 @@
 					} else if (type=="entity"){
                         let ball= document.getElementById('table');
                         ball.setAttribute('material','opacity', 0.1)
+                        ball.setAttribute('material','color', 'blue')
 						//target[num[j]].setAttribute('opacity', 0.1);
                         console.log(ball);
 					}
