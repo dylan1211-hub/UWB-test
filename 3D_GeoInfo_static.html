@@ -33,13 +33,13 @@
 		<a-entity class="entrance floor2" geometry="primitive: sphere; radius: 0.25" material="color: yellow"></a-entity>-->
 
 		<!--電腦教室桌子-->
-		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0"></a-entity>
+		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_table.glb" scale="0.9 0.9 0.9" rotation="0 -45 0"></a-entity>
 		<!--電腦教室電腦右-->
-		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0"></a-entity>
+		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.9 0.9 0.9" rotation="0 -45 0"></a-entity>
 		<!--電腦教室電腦中-->
-		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0"></a-entity>
+		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.9 0.9 0.9" rotation="0 -45 0"></a-entity>
 		<!--電腦教室電腦左-->
-		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0"></a-entity>
+		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.9 0.9 0.9" rotation="0 -45 0"></a-entity>
 
 
 		<a-camera rotation-reader></a-camera>
@@ -51,7 +51,7 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-		const TrackAPI = "https://e35b-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+		const TrackAPI = "https://139b-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 		
 		//AR內容位置
 		let targetEntrance = ''; //記錄導引目標空間入口座標(導引箭號用)
@@ -91,7 +91,7 @@
 						SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 						SetLocation("entity", theta_rad, position, objectPosition, "computer_room");
 					});
-				}, 1500);
+				}, 1000);
 
 			}, {once: true}); //取得網頁就緒當下之方位角，且不隨每次的位置更新重複執行
 		});
