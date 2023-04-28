@@ -89,7 +89,7 @@
 						let point = {x: data.x, y: data.y}; //用戶即時平面位置座標(判斷within使用)
 						let position = {coords:{longitude: data.x, latitude: data.y, altitude: userHeight}}; //用戶即時位置座標
 						SetLocation("text", theta_rad, position, objectPosition, "computer_room");
-						SetLocation("entity", theta_rad, position, objectPosition, "computer_room");
+						SetLocation("entity", theta_rad, position, objectPosition, "computer_room"); 
 					});
 				}, 1000);
 
