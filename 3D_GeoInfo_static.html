@@ -29,10 +29,10 @@
 
         <!--user-->
 		<a-entity id=user class="user" geometry="primitive: sphere; radius: 0.1" material="color: yellow; transparent: true; opacity: 1" animation-mixer ></a-entity>
-		<a-text class="user" value="user 1" scale="3 3 3" align="center" color="white"></a-text>
+		<a-text class="user" value="user 1" scale="5 5 5" align="center" color="white"></a-text>
 
 
-		<a-camera rotation-reader></a-camera>
+		<a-camera rotation-reader fov="60"></a-camera>
 	</a-scene>
 	
 	<script type="module">
@@ -41,9 +41,9 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-		const TrackAPI = "https://f042-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+		const TrackAPI = "https://0631-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 
-		const TrackAPI2 = "https://f042-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
+		const TrackAPI2 = "https://0631-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
 
 		var position;
 		
@@ -128,8 +128,8 @@
 					//	target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
 					//	H = ancpos[j].z + 0.5 - position.coords.altitude;
 					//}
-					let z = Math.cos(degree)*E + Math.sin(degree)*N + 5;
-					let x = Math.cos(degree)*N - Math.sin(degree)*E + 5; //換算至手機相機局部坐標系中(公尺)
+					let z = Math.cos(degree)*E + Math.sin(degree)*N;
+					let x = Math.cos(degree)*N - Math.sin(degree)*E; //換算至手機相機局部坐標系中(公尺)
 
 					let target_att = document.createAttribute('position');
 					target_att.value = x+" "+H+" "+z;
@@ -152,8 +152,8 @@
 						target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
 						H = ancpos[j].z + 0.1 - position.coords.altitude;
 					}
-					let z = Math.cos(degree)*E + Math.sin(degree)*N +5;
-					let x = Math.cos(degree)*N - Math.sin(degree)*E +5; //換算至手機相機局部坐標系中(公尺)
+					let z = Math.cos(degree)*E + Math.sin(degree)*N;
+					let x = Math.cos(degree)*N - Math.sin(degree)*E; //換算至手機相機局部坐標系中(公尺)
 
 					let target_att = document.createAttribute('position');
 					target_att.value = x+" "+H+" "+z;
