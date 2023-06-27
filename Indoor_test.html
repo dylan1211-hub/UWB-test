@@ -120,9 +120,9 @@
 				for(let j=0; j<ancpos.length; j++){ 
 					let H = ancpos[j].z - position.coords.altitude;
 					let user = new LatLon(position.coords.latitude, position.coords.longitude);
-					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user)+1;
+					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user)-1;
 					let N = new LatLon(ancpos[j].y, position.coords.longitude).distanceTo(user)+1;
-					if (ancpos[j].x-position.coords.longitude < 0){ E = -E-2;}
+					if (ancpos[j].x-position.coords.longitude < 0){ E = -E+2;}
 					if (ancpos[j].y-position.coords.latitude < 0){ N = -N-2;}
 					//if (type=="text"){
 					//	target[j].setAttribute("look-at", {x: 0, y: 0, z: 0});
