@@ -18,14 +18,38 @@
 	>
 
 
-		<!--電腦教室桌子-->
+		<!--電腦教室桌子
 		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
-		<!--電腦教室電腦右-->
+		電腦教室電腦右
 		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
-		<!--電腦教室電腦中-->
+		電腦教室電腦中
 		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
-		<!--電腦教室電腦左-->
+		電腦教室電腦左
 		<a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        -->
+
+        <!--電腦教室桌子1-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子2-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子3-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子4-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子5-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子6-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子A-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子B-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子C-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子D-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <!--電腦教室桌子E-->
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
 
         <!--user-->
 		<a-entity id=user class="user" geometry="primitive: sphere; radius: 0.1" material="color: cyan; transparent: true; opacity: 1" animation-mixer ></a-entity>
@@ -41,20 +65,31 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-		const TrackAPI = "https://b014-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+		const TrackAPI = "https://0c3d-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 
-		const TrackAPI2 = "https://b014-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
+		const TrackAPI2 = "https://0c3d-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
 
 		var position;
 		
 		//AR內容位置
 		let targetEntrance = ''; //記錄導引目標空間入口座標(導引箭號用)
-		let objectPosition = [{"x":120.2201440,"y":22.9987904,"z":26.234},
+		let objectPosition = [{"x":120.220164095,"y":22.9988064533,"z":26.234},
+        {"x":120.220149465,"y":22.99880658,"z":26.234},
+        {"x":120.220134834,"y":22.998806565,"z":26.234},
+        {"x":120.220120204,"y":22.9988063843,"z":26.234},
+        {"x":120.220105575,"y":22.9988062217,"z":26.234},
+        {"x":120.220090944,"y":22.9988062525,"z":26.234},
+        {"x":120.220167973,"y":22.9987615521,"z":26.234},
+        {"x":120.220153343,"y":22.9987616762,"z":26.234},
+        {"x":120.220138715,"y":22.9987613957,"z":26.234},
+        {"x":120.220124085,"y":22.9987613041,"z":26.234},
+        {"x":120.220109461,"y":22.9987608888,"z":26.234}];
+
+		/*{"x":120.2201440,"y":22.9987904,"z":26.234},
 		{"x":120.2201367,"y":22.9987777,"z":26.994},
 		{"x":120.2201437,"y":22.9987877,"z":26.994},
-		{"x":120.2201507,"y":22.9987977,"z":26.994}];
-
-		
+		{"x":120.2201507,"y":22.9987977,"z":26.994}
+        */
 		
 	//---主要功能: 取得姿態、位置等參數控制AR內容渲染狀況---
 		//watch position for indoor (每一秒呼叫一次後端API，從GIPS server獲取最新一筆定位軌跡，存入物件position)
