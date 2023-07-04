@@ -8,10 +8,22 @@
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <link rel="stylesheet" href="./indoor_test.css">
 </head>
 
 <body style="margin: 0px; overflow: hidden;">
+
+
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="geomatics" tabindex="0" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+
 	<a-scene
+    id = "scene"
 	vr-mode-ui="enabled: false"
 	embedded
 	arjs="sourceType: webcam; debugUIEnabled: false;"
@@ -29,27 +41,27 @@
         -->
 
         <!--電腦教室桌子1-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子2-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子3-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子4-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子5-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子6-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子A-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子B-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子C-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子D-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
         <!--電腦教室桌子E-->
-        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer></a-entity>
+        <a-entity class="computer_room" gltf-model="https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb" scale="0.8 0.8 0.8" rotation="0 -45 0" animation-mixer id="object"></a-entity>
 
         <!--user-->
 		<a-entity id=user class="user" geometry="primitive: sphere; radius: 0.1" material="color: cyan; transparent: true; opacity: 1" animation-mixer ></a-entity>
@@ -65,13 +77,14 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-		const TrackAPI = "https://0c3d-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+	function Run(){	const TrackAPI = "https://076f-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 
-		const TrackAPI2 = "https://0c3d-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
+		const TrackAPI2 = "https://076f-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
 
 		var position;
 		
 		//AR內容位置
+        let yesorno = " ";
 		let targetEntrance = ''; //記錄導引目標空間入口座標(導引箭號用)
 		let objectPosition = [{"x":120.220164095,"y":22.9988064533,"z":26.234},
         {"x":120.220149465,"y":22.99880658,"z":26.234},
@@ -91,7 +104,7 @@
 		{"x":120.2201507,"y":22.9987977,"z":26.994}
         */
 		
-	//---主要功能: 取得姿態、位置等參數控制AR內容渲染狀況---
+	    //---主要功能: 取得姿態、位置等參數控制AR內容渲染狀況---
 		//watch position for indoor (每一秒呼叫一次後端API，從GIPS server獲取最新一筆定位軌跡，存入物件position)
 		jQuery(document).ready(function(){
 			//ResetColor('1', 'white'); ResetColor('2', 'yellow'); ResetColor('3', 'red');
@@ -113,6 +126,7 @@
 				    position = {coords:{longitude: data.x, latitude: data.y, altitude: userHeight}}; //用戶即時位置座標
 					//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 					SetLocation("entity", theta_rad, position, objectPosition, "computer_room");  
+                    //SetOpacityValue("entity",yesorno);
 				});
 
 				$.getJSON( TrackAPI2, function (data){
@@ -133,6 +147,7 @@
 					    position = {coords:{longitude: data.x, latitude: data.y, altitude: userHeight}}; //用戶即時位置座標
 						//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 						SetLocation("entity", theta_rad, position, objectPosition, "computer_room"); 
+                        //SetOpacityValue("entity",yesorno);
 					});
 					$.getJSON( TrackAPI2, function (data){
 					let userHeight = data.z + 26.728;
@@ -141,12 +156,14 @@
 					//position = {coords:{longitude: data.x, latitude: data.y, altitude: userHeight}}; //用戶即時位置座標
 					//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 					//SetLocation("entity", theta_rad, position, objectPosition, "computer_room");
+                    //console.log(position);
 					SetUser("entity", theta_rad, position, usertrack, "user");
 				});
 				}, 500);
 
 			}, {once: true}); //取得網頁就緒當下之方位角，且不隨每次的位置更新重複執行
 		});
+        GetSwitch();
 				
 		//設定各模型相對於所在即時位置的高及位置
 		function SetLocation(type, degree, position, ancpos, classtype){ //type: 實體類型, degree: 啟動時裝置方位角, position: 用戶位置座標, ancpos: AR內容座標
@@ -197,9 +214,42 @@
 			}
 			
 		};
+    };
+    Run();
 
-		
+		function GetSwitch(){
+            let checkbox = document.querySelector("#myonoffswitch");
+            checkbox.addEventListener('change',function(){
+                let scene = document.getElementById('scene');
+                if(this.checked){
+                    for(let r=0;r<6;r++){
+                        let right = document.createElement('a-entity');
+                        right.setAttribute('class','computer_room');
+                        right.setAttribute('gltf-model','https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table_2.glb');
+                        right.setAttribute('scale','0.8 0.8 0.8');
+                        right.setAttribute('animation-mixer');
+                        right.setAttribute('id','object');
+                        scene.appendChild(right);
+                    };
+                    for(let l=0;l<5;l++){
+                        let left = document.createElement('a-entity');
+                        left.setAttribute('class','computer_room');
+                        left.setAttribute('gltf-model','https://dylan1211-hub.github.io/UWB-test/assets/computer_and_table.glb');
+                        left.setAttribute('scale','0.8 0.8 0.8');
+                        left.setAttribute('animation-mixer');
+                        left.setAttribute('id','object');
+                        scene.appendChild(left);
+                    }
+                    Run();
 
+                }else{
+                    console.log("not display");
+                    for(let i=0;i<11;i++){
+                    scene.removeChild(document.getElementById('object'));
+                    }
+                    
+            }})
+        }
 
 	//測試位置紀錄
 	  //電腦教室正中間 170051.6439048175,2544361.6260521584 -> 120.220133302008,22.9987890392738
