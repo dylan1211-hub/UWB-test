@@ -1,5 +1,5 @@
 .onoffswitch {
-    position: fixed; width: 90px;z-index:999 ; 
+    position: fixed; width: 90px;z-index:999 ;
     bottom:5px;
     left: 5px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -19,17 +19,17 @@
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    font-size: 13px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
     content: "AR-ON";
-    padding-left: 8px;
+    padding-left: 10px;
     background-color: #34A7C1; color: #FFFFFF;
 }
 .onoffswitch-inner:after {
     content: "AR-OFF";
-    padding-right: 8px;
+    padding-right: 10px;
     background-color: #EEEEEE; color: #999999;
     text-align: right;
 }
