@@ -77,9 +77,9 @@
 		
 	//---全域變數---
 		//API網址 (80 port: ngrok http 80)
-	function Run(){	const TrackAPI = "https://f232-140-116-47-115.jp.ngrok.io/TrackAPI.php";
+	function Run(){	const TrackAPI = "https://e3b2-140-116-47-115.jp.ngrok.io/TrackAPI.php";
 
-		const TrackAPI2 = "https://f232-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
+		const TrackAPI2 = "https://e3b2-140-116-47-115.jp.ngrok.io/TrackAPI2.php";
 
 		var position;
 		
@@ -127,7 +127,7 @@
 					//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 					SetLocation("entity", theta_rad, position, objectPosition, "computer_room");  
                     //SetOpacityValue("entity",yesorno);
-                    console.log(position);
+                    //console.log(position);
 				});
 
 				$.getJSON( TrackAPI2, function (data){
@@ -149,7 +149,7 @@
 						//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 						SetLocation("entity", theta_rad, position, objectPosition, "computer_room"); 
                         //SetOpacityValue("entity",yesorno);
-                        console.log(position);
+                        //console.log(position);
 					});
 					$.getJSON( TrackAPI2, function (data){
 					let userHeight = data.z + 26.728;
@@ -158,7 +158,7 @@
 					//position = {coords:{longitude: data.x, latitude: data.y, altitude: userHeight}}; //用戶即時位置座標
 					//SetLocation("text", theta_rad, position, objectPosition, "computer_room");
 					//SetLocation("entity", theta_rad, position, objectPosition, "computer_room");
-                    //console.log(position);
+                    console.log(position);
 					SetUser("entity", theta_rad, position, usertrack, "user");
 				});
 				}, 1000);
@@ -174,8 +174,8 @@
 				for(let j=0; j<ancpos.length; j++){ 
 					let H = ancpos[j].z - position.coords.altitude;
 					let user = new LatLon(position.coords.latitude, position.coords.longitude);
-					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user);
-					let N = new LatLon(ancpos[j].y, position.coords.longitude).distanceTo(user);
+					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user)+4;
+					let N = new LatLon(ancpos[j].y, position.coords.longitude).distanceTo(user)-4;
 					if (ancpos[j].x-position.coords.longitude < 0){ E = -E;}
 					if (ancpos[j].y-position.coords.latitude < 0){ N = -N;}
 					//if (type=="text"){
@@ -201,8 +201,8 @@
 				for(let j=0; j<ancpos.length; j++){ 
 					let H = ancpos[j].z - position.coords.altitude;
 					let user = new LatLon(position.coords.latitude, position.coords.longitude);
-					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user)+4;
-					let N = new LatLon(ancpos[j].y, position.coords.longitude).distanceTo(user)-4;
+					let E = new LatLon(position.coords.latitude, ancpos[j].x).distanceTo(user);
+					let N = new LatLon(ancpos[j].y, position.coords.longitude).distanceTo(user);
 					if (ancpos[j].x-position.coords.longitude < 0){ E = -E;}
 					if (ancpos[j].y-position.coords.latitude < 0){ N = -N;}
 					if (type=="text"){
@@ -215,6 +215,8 @@
 					let target_att = document.createAttribute('position');
 					target_att.value = x+" "+H+" "+z;
 					target[j].setAttributeNode(target_att);
+                    console.log(target_att.value);
+
 				}
 			}
 			
