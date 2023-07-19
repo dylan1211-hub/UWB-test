@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+  <div style="width:1300px;">
+
+    <div style="width:500px;height:300px; float: right: 100px; bottom: 10px;">
+      <iframe id="mapFrame" name="mapFrame" width="100%" height="100%" src="http://140.116.47.123:8686/rtls/app/zh-tw/map?enablePanel=false">
+      </iframe>
+    </div>
+
+    <div>
+    <button type="button" onclick="locateItemFunc()">locatItem(itemUid, setCenter, setCurrent)</button>
+    </div>
+
+    <script>
+      var mapWindow = document.getElementById('mapFrame').contentWindow;
+
+      let configureAuthToken = function () {
+        mapWindow.postMessage({type: 'request', cmd: 'configure', data: {key: "authentication", value: {apiKey: "prod0159f50204644026939caac9876724a3", appId: "ncku_geo"}}}, '*');
+      }
+  
+      function locateItemFunc() {
+        mapWindow.postMessage({type: 'request', cmd: 'locateItem', data: {itemUid: "F2E5", setCenter: true, setCurrent: true}}, '*');
+      }
+
+      function receivedMessageFromChannel(e) {
+        if (e.source === e.target) { 
+          console.warn("Message ignored (e.source == e.target):", e);
+          return;
+        }
+
+        const msg = e.data;
+        let srcWindow = e.source;
+        if (msg.type === 'info') {
+          
+		   switch (msg.cmd) {
+			case 'ready':
+			  configureAuthToken();
+			  break;
+			default:
+			  break;
+		  }
+        } 
+      }
+
+      window.addEventListener("message", receivedMessageFromChannel);
+
+      </script>
+    </div>
+  </body>
+</html>

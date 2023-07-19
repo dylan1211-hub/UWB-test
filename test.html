@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UWB API測試</title>
+	<meta charset='utf-8'>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+    <script>
+    
+    let accessToken;
+    let apiResponse;
+
+    async function getAuthorizationHeader() {
+        
+        let auth_url = "http://140.116.47.123:8686/rtls/rest/auth/1.0.0/signin";
+        let data = {"l":null,"p":"!p@ssw0rd","u":"admin"}; 
+        try {
+            let res = await axios({
+                method: "POST",
+                url: auth_url,
+                data: JSON.stringify(data),
+                headers: { "content-type": "application/json" },
+            });
+            accessToken = res ;
+            // test
+            console.log("accessToken:"+accessToken);
+            // console.log(accessToken);
+            return {
+                authorization: `Bearer ${accessToken.access_token}`,
+            }
+        } 
+        catch (err) {
+            return err;
+        }
+    }
+    //getAuthorizationHeader()
+
+
+    /*async function getApiResponse(){
+        let apiUrl = "https://cors-anywhere.herokuapp.com/http://140.116.47.123:8686/rtls/rest/1.0.0/targetState/batchQuery";
+        $.ajax({
+            url: apiUrl,
+            headers : getAuthorizationHeader(),
+            method: 'POST',
+            dataType: 'json',
+            data: '[{"targets": {"tagIds": [328184]},"conds": {"status": {},"itemInfo": {},"tagInfo": {}},"destEpsg": "epsg:4326","countOnly":false}]',
+            async: true,　
+        
+            success: res =>{
+                console.log(res)
+                },
+            error: err =>{
+                console.log(err)
+                },
+        });
+    }*/
+    async function getApiResponse() {
+        let apiUrl = "https://cors-anywhere.herokuapp.com/http://140.116.47.123:8686/rtls/rest/1.0.0/targetState/batchQuery";
+        try {
+            let res = await axios.post(apiUrl, {
+            headers: await getAuthorizationHeader(), // 獲取accessToken
+            data: '[{"targets": {"tagIds": [328184]},"conds": {"status": {},"itemInfo": {},"tagInfo": {}},"destEpsg": "epsg:4326","countOnly":false}]' 
+            });
+            
+            apiResponse = res.data;
+            console.log("apiResponse:");
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    getApiResponse()
+    </script>
+</body>
