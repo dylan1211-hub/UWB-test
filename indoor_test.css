@@ -76,3 +76,9 @@
     background-color: rgba(255, 255, 255, 0.2);
     margin-right: 0.25em;
 }
+
+#lb{
+    position: fixed; width: 30px; height:30px;z-index:9999 ;
+    bottom:253px;
+    right: 8px;
+}
