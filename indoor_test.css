@@ -57,7 +57,7 @@
 #mapFrame{
     position: fixed; width: 383px; height: 244px;z-index:999 ;
     bottom:0.09px;
-    left: 0.4px;
+    left: 0.5px;
 }
 
 #scene{
@@ -78,7 +78,7 @@
 }
 
 #lb{
-    position: fixed; width: 30px; height:30px;z-index:9999 ;
+    position: fixed; width: 40px; height:40px;z-index:9999 ;
     bottom:253px;
     right: 8px;
 }
