@@ -1,6 +1,6 @@
 .onoffswitch {
     position: fixed; width: 90px;z-index:9999 ;
-    bottom:290px;
+    bottom:5px;
     left: 5px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
@@ -50,20 +50,20 @@
 
 #map{
     position: fixed; 
-    width: 390px; 
+    width: 420px; 
     height: 285px;
     z-index:9999 ;
     bottom:0.1px;
-    left: 0.1px;
+    right: 0.1px;
 }
 
 #mapFrame{
     position: fixed; 
-    width: 384px; 
+    width: 414px; 
     height: 284px;
     z-index:9999;
     bottom:0.09px;
-    left: 0.5px;
+    right: 0.5px;
 }
 
 #scene{
